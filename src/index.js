@@ -1,8 +1,10 @@
 
 function choose(choices) {
-	return choices[0];
+	const choice = Math.floor((Math.random() * choices.length));
+	return choices[choice];
 }
 
 module.exports = {
-	'choose': choose
+	'choose': choose,
+	'choice': choose,
 }
