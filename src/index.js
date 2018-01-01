@@ -4,7 +4,24 @@ function choose(choices) {
 	return choices[choice];
 }
 
+function shuffle(choices) {
+	const shuffledChoices = Array.of(...choices);
+
+	let pick = 0;
+	let temp = undefined;
+
+	for (let i = 0; i < shuffledChoices.length - 1; i++) {
+		pick = Math.floor((Math.random() * shuffledChoices.length));
+		temp = shuffledChoices[pick]
+		shuffledChoices[pick] = shuffledChoices[i]
+		shuffledChoices[i] = temp;
+	}
+
+	return shuffledChoices;
+}
+
 module.exports = {
 	'choose': choose,
 	'choice': choose,
+	'shuffle': shuffle,
 }
