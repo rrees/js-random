@@ -20,8 +20,13 @@ function shuffle(choices) {
 	return shuffledChoices;
 }
 
+function randint(a, b) {
+	return a + Math.floor(Math.random() * b);
+}
+
 module.exports = {
 	'choose': choose,
 	'choice': choose,
 	'shuffle': shuffle,
+	randint,
 }
