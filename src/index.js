@@ -24,9 +24,20 @@ function randint(a, b) {
 	return a + Math.floor(Math.random() * b);
 }
 
+function choices(data, choices) {
+	const results= [];
+
+	while(results.length < choices) {
+		results.push(choose(data));
+	}
+
+	return results;
+}
+
 module.exports = {
 	'choose': choose,
 	'choice': choose,
 	'shuffle': shuffle,
+	choices,
 	randint,
 }
