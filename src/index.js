@@ -30,11 +30,8 @@ function choices(data, choices, replacement=true) {
 	const availableChoices = shuffle(Array.from(data));
 
 	while(availableChoices.length > 0 && results.length < choices) {
-		if(replacement) {
-			results.push(choose(data));
-		} else {
-			results.push(availableChoices.pop());
-		}
+		const pick = replacement ? choose(data) : availableChoices.pop();
+		results.push(pick);
 	}
 
 	return results;
