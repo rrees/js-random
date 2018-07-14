@@ -21,14 +21,20 @@ function shuffle(choices) {
 }
 
 function randint(a, b) {
-	return a + Math.floor(Math.random() * b);
+	return a + Math.floor(Math.random() * (b - a));
 }
 
-function choices(data, choices) {
+function choices(data, choices, replacement=true) {
 	const results= [];
 
-	while(results.length < choices) {
-		results.push(choose(data));
+	const availableChoices = shuffle(Array.from(data));
+
+	while(availableChoices.length > 0 && results.length < choices) {
+		if(replacement) {
+			results.push(choose(data));
+		} else {
+			results.push(availableChoices.pop());
+		}
 	}
 
 	return results;
