@@ -38,9 +38,9 @@ function choices(data, choices, replacement=true) {
 }
 
 module.exports = {
-	'choose': choose,
+	choose,
 	'choice': choose,
-	'shuffle': shuffle,
+	shuffle,
 	choices,
 	randint,
 }
