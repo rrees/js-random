@@ -1,6 +1,8 @@
+const test = require('ava');
+
 const random = require('../src/index');
 
-test('randint generates a number in range', () => {
+test('randint generates a number in range', (t) => {
     [
         [1,2],
         [1,6],
@@ -9,7 +11,7 @@ test('randint generates a number in range', () => {
         [2,24],
     ].forEach(([a, b]) => {
         const i = random.randint(a, b)
-        expect(i).toBeLessThanOrEqual(b);
-        expect(i).toBeGreaterThanOrEqual(a);
+        t.true(i <= b);
+        t.true(i >= a);
     });
 });

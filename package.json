@@ -7,9 +7,9 @@
   "author": "(Robert Rees <npm@shudderfix.com)",
   "license": "GPL-3.0",
   "devDependencies": {
-    "jest": "^22.0.4"
+    "ava": "^5.2.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "ava"
   }
 }
