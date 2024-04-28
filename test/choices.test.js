@@ -19,3 +19,11 @@ test('choices without replacement does not contain duplicates', (t) => {
 
 	t.is(resultAsSet.size, 2);
 });
+
+test('choices returns the input if more choices are specified', (t) => {
+	const input = [1, 2];
+
+	const result = random.choices(input, 4);
+
+	t.is(result.length, 2);
+})
